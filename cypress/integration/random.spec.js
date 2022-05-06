@@ -11,7 +11,7 @@ describe("random page", () => {
 
     cy.create(recommendationFactory);
     
-    cy.visit(path);
+    cy.contains("Random").click();
 
     cy.url().then($url => {
       expect($url).includes(path);

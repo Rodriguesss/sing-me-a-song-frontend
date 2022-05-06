@@ -11,7 +11,7 @@ describe("top page", () => {
 
     cy.create(recommendationFactory);
     
-    cy.visit(path);
+    cy.contains("Top").click();
 
     cy.url().then($url => {
       expect($url).includes(path);

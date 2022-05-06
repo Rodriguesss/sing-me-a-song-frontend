@@ -28,7 +28,8 @@ Cypress.Commands.add("clickOnSvgArrowArticle", (containsObject, vote) => {
 
   vote ? cy.get("@Svg").first().click() : cy.get("@Svg").last().click();
 
-  checkScore(0, vote);
+  const scoreDefault = 0;
+  checkScore(scoreDefault, vote);
 
   cy.end();
 });
@@ -39,8 +40,8 @@ Cypress.Commands.add("reloadAndCheckTitle", ({ title }) => {
   cy.end();
 });
 
-function checkScore(scoreString, vote) {
-  const score = eval(`${scoreString} ${vote ? '+' : '-'} 1`);
+function checkScore(scoreDefault, vote) {
+  const score = eval(`${scoreDefault} ${vote ? '+' : '-'} 1`);
 
   cy.get("@Score").contains(score);
   cy.reload();
