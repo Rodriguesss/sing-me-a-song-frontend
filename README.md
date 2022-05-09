@@ -12,7 +12,7 @@ Rode o comando para baixar a dependências:
 
 Depois rode o comando:
 
-### `npm rtart`
+### `npm start`
 
 Lembre-se de configurar o endereço da API atraves do arquivo ".env" na raiz do projeto.
 #
